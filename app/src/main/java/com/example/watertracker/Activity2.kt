@@ -1,7 +1,9 @@
 package com.example.watertracker
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.service.voice.VoiceInteractionSession.Insets
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
@@ -40,6 +42,10 @@ class Activity2 : AppCompatActivity() {
                 findViewById<TextView>(R.id.textView9).setText("Easy to Use – Drink, Tap, Repeat")
                 findViewById<TextView>(R.id.textView).setText("Staying hydrated every day is easy with Drops Water Tracker.")
                  page++;
+            }
+            else if(page==3){
+                val ins=Intent(this,Activity3::class.java)
+                startActivity(ins)
             }
         }
 
