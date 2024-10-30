@@ -1,7 +1,9 @@
 package com.example.watertracker
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,6 +20,7 @@ class Activity3 : AppCompatActivity() {
     private lateinit var binding : Activity3Binding
 
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,7 +28,16 @@ class Activity3 : AppCompatActivity() {
         binding=Activity3Binding.inflate(layoutInflater)
         setContentView(binding.root)
         replaceFragment(home())
+
+
+
+
+
         binding.bottomNavigationView.setOnItemSelectedListener {
+
+
+
+
             when(it.itemId){
                 R.id.home-> {
                     replaceFragment(home())
