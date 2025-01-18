@@ -35,19 +35,11 @@
             app:menu="@menu/bottom_nav"
             android:backgroundTint="@color/white"
             app:itemBackground="@color/white"
-            app:itemIconTint="#5DCCFC"
+            app:itemIconTint = "#5DCCFC"
+
             app:itemTextColor="#5DCCFC"
 
-
-
-
-
-
-
-
-
-
-            />
+ />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

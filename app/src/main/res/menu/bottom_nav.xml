@@ -8,13 +8,13 @@
 
 
 
-        <item android:title="Home"
+        <item
+
+            android:title="Home"
             android:id="@+id/home"
             android:icon="@drawable/home2"
 
-
-
-             />
+/>
 
 
         <item android:title="Analysis"

@@ -17,6 +17,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class Activity3 : AppCompatActivity() {
 
 
+
+
+
     private lateinit var binding : Activity3Binding
 
 
@@ -28,6 +31,12 @@ class Activity3 : AppCompatActivity() {
         binding=Activity3Binding.inflate(layoutInflater)
         setContentView(binding.root)
         replaceFragment(home())
+
+
+
+
+
+
 
 
 
@@ -46,6 +55,10 @@ class Activity3 : AppCompatActivity() {
 
                 R.id.analysis->{
                     replaceFragment(analysis())}
+
+                R.id.profile->{
+                    replaceFragment(profileFraagment())
+                }
                 else ->{}
 
             }
@@ -67,6 +80,10 @@ class Activity3 : AppCompatActivity() {
 
 
     }
+
+
+
+
 
 
 }
