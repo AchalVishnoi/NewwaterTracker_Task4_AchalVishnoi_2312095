@@ -13,6 +13,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -87,11 +88,13 @@ class SignIn : AppCompatActivity() {
 
             signInButton.setOnClickListener {
 
+                signInButton.visibility= View.GONE
+                findViewById<ProgressBar>(R.id.signInLoading).visibility=View.VISIBLE
 
 
 
 
-                    val emailText = emailEditText.text.toString().trim()
+                val emailText = emailEditText.text.toString().trim()
                     val passwordText = passwordEditText.text.toString().trim()
                     if (emailText.isEmpty() || passwordText.isEmpty()) {
                         Toast.makeText(this, "All fields are required!", Toast.LENGTH_SHORT).show()
@@ -129,6 +132,10 @@ class SignIn : AppCompatActivity() {
                                         ).show()
                                     }
                                 } else {
+
+                                    signInButton.visibility= View.VISIBLE
+                                    findViewById<ProgressBar>(R.id.signInLoading).visibility=View.GONE
+
                                     val errorBody = response.errorBody()?.string()
                                     Toast.makeText(
                                         this@SignIn,

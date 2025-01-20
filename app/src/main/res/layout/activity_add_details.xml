@@ -199,6 +199,16 @@
                 android:layout_height="wrap_content"
                 android:text="Done"
                 android:backgroundTint="#62CDFA"/>
+            <ProgressBar
+                
+                android:id="@+id/updateProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateDrawable="@drawable/circular_progress_drawable"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                />
         </LinearLayout>
 
     </LinearLayout>

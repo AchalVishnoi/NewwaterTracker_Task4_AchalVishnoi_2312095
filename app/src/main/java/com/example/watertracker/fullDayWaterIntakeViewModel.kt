@@ -11,35 +11,31 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+class fullDayWaterIntakeViewModel : ViewModel() {
 
-class ProfileFragmentViewModel : ViewModel() {
+    private val _getFullDayUpdate = MutableLiveData<fullDayWaterIntake?>()
+    val getFullDayUpdate: LiveData<fullDayWaterIntake?> get() = _getFullDayUpdate
 
-    private val _userProfile = MutableLiveData<getUserProfile?>()
-    val userProfile: LiveData<getUserProfile?> get() = _userProfile
+    fun updateFullDayWaterIntake(token:String) {
 
-    fun fetchUserProfile(token: String) {
+
         Log.d("ProfileFragmentViewModel", "Fetching user profile with token: $token")
-        RetrofitInstance.apiService.getUserProfile("Bearer $token")
-            .enqueue(object : Callback<getUserProfile> {
-                override fun onResponse(call: Call<getUserProfile>, response: Response<getUserProfile>) {
+        RetrofitInstance.apiService.getFulDayWaterIntake("Bearer $token")
+            .enqueue(object : Callback<fullDayWaterIntake> {
+                override fun onResponse(call: Call<fullDayWaterIntake>, response: Response<fullDayWaterIntake>) {
                     if (response.isSuccessful && response.body() != null) {
                         Log.d("ProfileFragmentViewModel", "User profile fetched successfully.")
-                        _userProfile.postValue(response.body())
+                        _getFullDayUpdate.postValue(response.body())
                     } else {
                         Log.e("ProfileFragmentViewModel", "Failed to fetch user profile. Response code: ${response.code()}")
-                        _userProfile.postValue(null)
+                        _getFullDayUpdate.postValue(null)
                     }
                 }
 
-                override fun onFailure(call: Call<getUserProfile>, t: Throwable) {
+                override fun onFailure(call: Call<fullDayWaterIntake>, t: Throwable) {
                     Log.e("ProfileFragmentViewModel", "Network error: ${t.message}")
-                    _userProfile.postValue(null)
+                    _getFullDayUpdate.postValue(null)
                 }
             })
     }
-
-
-
-
-
 }

@@ -5,6 +5,114 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".logWaterIntake">
+    tools:context=".logWaterIntake"
+    android:background="#eaf8fe">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        >
+        <ImageView
+            android:id="@+id/btnClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Close"
+          android:layout_marginLeft="10dp"
+            android:padding="8dp"
+            android:src="@drawable/back"
+            android:tint="@color/black"
+            tools:ignore="UseAppTint" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+
+        >
+
+
+
+        <LinearLayout
+            android:id="@+id/waterLogItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"
+            >
+
+            <ImageView
+                android:id="@+id/a"
+                android:layout_width="122dp"
+                android:layout_height="118dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/tea_cup2"/>
+            <ImageView
+                android:id="@+id/b"
+                android:layout_width="122dp"
+                android:layout_height="118dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/soup_4427167"/><ImageView
+            android:id="@+id/c"
+            android:layout_width="122dp"
+            android:layout_height="118dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/lemonade_18315626"/><ImageView
+            android:id="@+id/d"
+            android:layout_width="122dp"
+            android:layout_height="118dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/glass_water"/>
+
+
+
+
+        </LinearLayout>
+
+<!--        <ProgressBar-->
+<!--            android:id="@+id/logWaterLoading"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:visibility="gone"/>-->
+
+
+        <ProgressBar
+            android:id="@+id/logWaterLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/circular_progress_drawable"
+            android:layout_gravity="center"
+
+            android:visibility="gone"/>
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

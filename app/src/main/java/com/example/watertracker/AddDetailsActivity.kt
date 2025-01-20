@@ -4,7 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.SeekBar
@@ -104,6 +106,10 @@ class AddDetailsActivity : AppCompatActivity() {
             })
 
             findViewById<Button>(R.id.nextButton).setOnClickListener {
+
+                findViewById<Button>(R.id.nextButton).visibility= View.GONE
+                findViewById<ProgressBar>(R.id.updateProgress).visibility=View.VISIBLE
+
 
                 val selectedId = radioGroup.checkedRadioButtonId
 

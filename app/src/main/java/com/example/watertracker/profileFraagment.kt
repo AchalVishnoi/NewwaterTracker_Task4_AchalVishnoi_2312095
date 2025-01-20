@@ -27,6 +27,7 @@ import mobile.kotlinexamples.fragments.com.example.watertracker.ProfileFragmentV
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.text.uppercaseChar
 
 class profileFraagment : Fragment() {
 
@@ -122,8 +123,10 @@ class profileFraagment : Fragment() {
 
         view.userProfile.observe(viewLifecycleOwner) { userProfile ->
             if (userProfile != null) {
-                first.text = userProfile.firstName
-                last.text = userProfile.lastName
+                var fir: String=userProfile.firstName.toString()
+                var las=userProfile.lastName.toString()
+                first.text = "${fir[0].uppercaseChar()}${fir.substring(1)}"
+                last.text = "${las[0].uppercaseChar()}${las.substring(1)}"
                 mail.text = userProfile.email
                 age.text = userProfile.age.toString()
 

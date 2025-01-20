@@ -4,7 +4,10 @@ import backend.addDetailRequest
 import backend.createUserResponse
 import backend.create_user
 import backend.create_user_response
+import backend.fullDayWaterIntake
 import backend.getUserProfile
+import backend.logWaterIntakeRequest
+import backend.logWaterIntakeResponse
 import backend.loginRequest
 import backend.response
 import retrofit2.Call
@@ -34,5 +37,19 @@ interface ApiService {
     fun getUserProfile(
         @Header("Authorization") token: String
     ): Call<getUserProfile>
+
+    @POST("/api/users/water/log")
+    fun logWaterIntake(
+        @Header("Authorization") token: String,
+        @Body logWaterIntakeRequest: logWaterIntakeRequest
+    ) : Call<logWaterIntakeResponse>
+
+
+    @GET("/api/users/water/getTodayRecord")
+    fun getFulDayWaterIntake(
+        @Header("Authorization") token: String
+    ): Call<fullDayWaterIntake>
+
+
 
 }

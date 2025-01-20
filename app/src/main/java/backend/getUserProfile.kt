@@ -12,7 +12,7 @@ data class getUserProfile(
     val gender: String?,
 
     val wakeUpTime: String,
-//    @JsonFormat(pattern = "hh:mm a")
+
     val sleepTime: String,
     val weight: Double?,
     val isVerified: Boolean?,

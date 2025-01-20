@@ -8,8 +8,10 @@ import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -77,6 +79,7 @@ class SignUpActivity : AppCompatActivity() {
                 signUpButton.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#62CDFA"))
 
                 signUpButton.setOnClickListener {
+
                     val firstName =
                         findViewById<EditText>(R.id.firstNameEditText).text.toString().trim()
                     val lastName =
@@ -90,6 +93,11 @@ class SignUpActivity : AppCompatActivity() {
                         return@setOnClickListener
                     }
 
+
+                    signUpButton.visibility= View.GONE
+                    findViewById<ProgressBar>(R.id.signupLoading).visibility=View.VISIBLE
+
+
                     val user = create_user(firstName, lastName, email, password)
 
                     RetrofitInstance.apiService.createUser(user)
@@ -98,6 +106,8 @@ class SignUpActivity : AppCompatActivity() {
                                 call: Call<createUserResponse>,
                                 response: Response<createUserResponse>
                             ) {
+
+
                                 if (response.isSuccessful) {
                                     val id = response.body()?.userId
                                     if (id != null) {
@@ -126,6 +136,10 @@ class SignUpActivity : AppCompatActivity() {
                                         ).show()
                                     }
                                 } else {
+
+                                    signUpButton.visibility= View.VISIBLE
+                                    findViewById<ProgressBar>(R.id.signupLoading).visibility=View.GONE
+
                                     val errorBody = response.errorBody()?.string()
                                     Toast.makeText(
                                         this@SignUpActivity,

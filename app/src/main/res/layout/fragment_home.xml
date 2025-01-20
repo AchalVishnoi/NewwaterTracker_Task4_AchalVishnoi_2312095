@@ -38,6 +38,7 @@
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/circularProgress"
             android:layout_width="130dp"
             android:layout_height="130dp"
             app:cardCornerRadius="65sp"
@@ -98,24 +99,24 @@
             android:id="@+id/gotoDashboard"
             android:layout_width="200dp"
             android:layout_height="50dp"
-            app:cardCornerRadius="20dp"
             app:cardBackgroundColor="#5DCCFC"
+            app:cardCornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.534"
+            app:layout_constraintHorizontal_bias="0.544"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.746"
-            >
+            app:layout_constraintTop_toBottomOf="@+id/circularProgress"
+            app:layout_constraintVertical_bias="0.3">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Go To DeshBoard"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Take Water"
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:gravity="center"
-                android:layout_gravity="center"
                 tools:ignore="HardcodedText">
 
             </TextView>
@@ -128,7 +129,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
-            android:padding="25dp"
+            android:padding="20dp"
             android:text="You got 50% of today’s goal, keep focus on your health!"
             android:textAlignment="center"
             android:textColor="#a6b6c2"
@@ -142,7 +143,6 @@
             tools:ignore="HardcodedText,MissingConstraints">
 
         </TextView>
-
 
         <androidx.cardview.widget.CardView
 
@@ -227,24 +227,30 @@
 
                 </TextView>
 
-                <TextView
+                <androidx.cardview.widget.CardView
                     android:id="@+id/textView11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
+                    android:layout_width="195dp"
+                    android:layout_height="10dp"
                     android:layout_marginStart="13dp"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginEnd="139dp"
-                    android:layout_marginBottom="81dp"
-                    android:text="200ml water(2 Glass)"
-                    android:textColor="#a6b6c2"
-                    android:textSize="15sp">
+                    android:layout_marginTop="50dp"
+                    app:cardCornerRadius="5dp"
 
-                </TextView>
+
+
+                    android:textColor="#a6b6c2"
+                    >
+
+                    <androidx.cardview.widget.CardView
+
+                        android:id="@+id/progres"
+                        android:layout_width="7dp"
+                        android:layout_height="10dp"
+                        app:cardCornerRadius="5dp"
+                        android:backgroundTint="#E33629"
+
+                        />
+
+                </androidx.cardview.widget.CardView>
 
 
             </RelativeLayout>
@@ -253,8 +259,8 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="100dp"
-            android:layout_height="60dp"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
             android:layout_marginTop="140dp"
             app:cardCornerRadius="15dp"
             app:layout_constraintBottom_toTopOf="@+id/gotoDashboard"
@@ -262,44 +268,78 @@
             app:layout_constraintHorizontal_bias="0.726"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView2"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintVertical_bias="0.2">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginLeft="9dp"
+    android:layout_marginTop="9dp">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Target"
         android:textColor="#a6b6c2"
-        android:textSize="15sp"
-        android:padding="10dp" />
+
+        />
     <TextView
+        android:id="@+id/targetText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="300ml"
-        android:textColor="@color/black"
-        android:textSize="15sp"
+        android:text="2000ml"
+        android:textStyle="bold"
+        android:textColor="#141a1e"
 
-        android:paddingBottom="10dp"
-        />
+        android:textSize="17sp"
+        android:layout_marginTop="10dp"
+ />
 </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
 
-
         <androidx.cardview.widget.CardView
             android:layout_width="150dp"
-            android:layout_height="60dp"
+            android:layout_height="70dp"
             app:cardCornerRadius="10dp"
 
             app:layout_constraintBottom_toBottomOf="@+id/gotoDashboard"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.703"
+            app:layout_constraintHorizontal_bias="0.72"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView2"
-            app:layout_constraintVertical_bias="0.248" />
+            app:layout_constraintVertical_bias="0.231" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="9dp">
+                <TextView
+                    android:id="@+id/timeStamp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Target"
+                    android:textColor="#a6b6c2"
+
+                    />
+                <TextView
+                    android:id="@+id/lastConsumed"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="2000ml"
+                    android:textStyle="bold"
+                    android:textColor="#141a1e"
+
+                    android:textSize="17sp"
+                    android:layout_marginTop="10dp"
+                    />
+            </LinearLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
